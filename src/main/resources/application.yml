@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/task_agile
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    open-in-view: false
+
+server:
+  port: 9090
