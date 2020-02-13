@@ -31,3 +31,6 @@ build/
 .vscode/
 /mvnw
 /mvnw.cmd
+/src/main/resources/static/js/**
+/src/main/resources/static/favicon.ico
+/src/main/resources/templates/index.html
