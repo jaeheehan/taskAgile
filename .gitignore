@@ -34,3 +34,6 @@ build/
 /src/main/resources/static/js/**
 /src/main/resources/static/favicon.ico
 /src/main/resources/templates/index.html
+/.mvn/wrapper/maven-wrapper.jar
+/.mvn/wrapper/maven-wrapper.properties
+/.mvn/wrapper/MavenWrapperDownloader.java
