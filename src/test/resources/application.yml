@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/task_agile_test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: create-drop
+        show_sql: true
+        format_sql: true
+    open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect
+
+logging:
+  level:
+    com.taskagile: DEBUG
