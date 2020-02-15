@@ -16,7 +16,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<front.path>${basedir}/../../../vscodeProjects/front-end</front.path>
+		<front.path>${basedir}/../front-end</front.path>
 	</properties>
 
 	<dependencies>
