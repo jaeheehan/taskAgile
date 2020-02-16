@@ -14,3 +14,4 @@ server:
 logging:
   level:
     com.taskagile: DEBUG
+    org.springframework.security: DEBUG
