@@ -34,15 +34,6 @@ public class AuthenticationFilter extends AbstractAuthenticationProcessingFilter
         log.debug("Processing login request");
 
         String requestBody = StreamUtils.copyToString(request.getInputStream(), Charset.forName("UTF-8"));
-
-        /*
-        log.info("궁긍하다");
-        log.info(copyToString);
-        log.info("#!@#!@#!@#!@#!@#!@#!@#!@#");
-        String requestBody = IOUtils.toString(request.getReader());
-        log.info(requestBody);
-        log.info("#!@#!@#!@#!@#!@#!@#!@#!@#");
-        */
         LoginRequest loginRequest = JsonUtils.toObject(requestBody, LoginRequest.class);
         if (loginRequest == null || loginRequest.isInvalid()) {
             throw new InsufficientAuthenticationException("Invalid authentication request");
@@ -50,7 +41,10 @@ public class AuthenticationFilter extends AbstractAuthenticationProcessingFilter
 
         UsernamePasswordAuthenticationToken token =
                 new UsernamePasswordAuthenticationToken(loginRequest.username, loginRequest.password);
-        log.info("#!@#!@#!@#!@#!@#!@#!@#!@#");
+
+        log.info("########");
+        log.info(token.toString());
+
         return this.getAuthenticationManager().authenticate(token);
     }
 
