@@ -4,6 +4,7 @@ import com.taskagile.app.domain.common.event.DomainEventPublisher;
 import com.taskagile.app.domain.common.mail.MailManager;
 import com.taskagile.app.domain.model.user.RegistrationException;
 import com.taskagile.app.domain.model.user.RegistrationManagement;
+import com.taskagile.app.domain.model.user.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,13 +17,15 @@ public class UserServiceImplTest {
     private DomainEventPublisher eventPublisherMock;
     private MailManager mailManagerMock;
     private UserServiceImpl instance;
+    private UserRepository userRepository;
 
     @BeforeEach
     public void setUp() {
         registrationManagementMock = mock(RegistrationManagement.class);
         eventPublisherMock = mock(DomainEventPublisher.class);
         mailManagerMock = mock(MailManager.class);
-        instance = new UserServiceImpl(registrationManagementMock, eventPublisherMock, mailManagerMock);
+        userRepository = mock(UserRepository.class);
+        instance = new UserServiceImpl(registrationManagementMock, eventPublisherMock, mailManagerMock, userRepository);
     }
 
     @Test

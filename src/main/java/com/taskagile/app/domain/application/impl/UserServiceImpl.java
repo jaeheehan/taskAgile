@@ -27,14 +27,16 @@ public class UserServiceImpl implements UserService {
     private RegistrationManagement registrationManagement;
     private DomainEventPublisher domainEventPublisher;
     private MailManager mailManager;
-
-    @Autowired
     private UserRepository userRepository;
 
-    public UserServiceImpl(RegistrationManagement registrationManagement, DomainEventPublisher domainEventPublisher, MailManager mailManager) {
+    public UserServiceImpl(RegistrationManagement registrationManagement,
+                           DomainEventPublisher domainEventPublisher,
+                           MailManager mailManager,
+                           UserRepository userRepository) {
         this.registrationManagement = registrationManagement;
         this.domainEventPublisher = domainEventPublisher;
         this.mailManager = mailManager;
+        this.userRepository = userRepository;
     }
 
     @Override
