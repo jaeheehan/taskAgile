@@ -40,7 +40,7 @@ public class Team extends AbstractBaseEntity {
         return team;
     }
 
-    public TeamId getId() {
+    public TeamId getTeamId() {
         return new TeamId(id);
     }
 

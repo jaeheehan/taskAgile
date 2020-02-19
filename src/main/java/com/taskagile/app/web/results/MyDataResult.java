@@ -39,7 +39,7 @@ public class MyDataResult {
         private String name;
 
         TeamResult(Team team) {
-            this.id = team.getId().value();
+            this.id = team.getTeamId().value();
             this.name = team.getName();
         }
 

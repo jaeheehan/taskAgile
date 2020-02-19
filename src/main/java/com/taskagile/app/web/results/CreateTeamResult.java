@@ -7,7 +7,7 @@ public class CreateTeamResult {
 
     public static ResponseEntity<ApiResult> build(Team team) {
         ApiResult apiResult = ApiResult.blank()
-                .add("id", team.getId().value())
+                .add("id", team.getTeamId().value())
                 .add("name", team.getName());
         return Result.ok(apiResult);
     }
