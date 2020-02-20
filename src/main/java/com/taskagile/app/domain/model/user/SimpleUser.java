@@ -19,7 +19,7 @@ public class SimpleUser implements UserDetails, Serializable {
     private String password;
 
     public SimpleUser(User user) {
-        this.userId = user.getId();
+        this.userId = user.getUserId().value();
         this.username = user.getUsername();
         this.password = user.getPassword();
     }

@@ -33,6 +33,9 @@ logging:
   level:
     com.taskagile: DEBUG
     org.springframework.security: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+
 
 app:
   mail-from: noreply@taskagile.com

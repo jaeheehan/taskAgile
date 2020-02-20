@@ -6,6 +6,10 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.*;
+import java.util.Date;
+import java.util.Objects;
+
 @Entity
 @Table(name = "user")
 public class User extends AbstractBaseEntity {
@@ -22,7 +26,7 @@ public class User extends AbstractBaseEntity {
     @Column(name = "email_address", nullable = false, length = 100, unique = true)
     private String emailAddress;
 
-    @Column(name = "password", nullable = false, length = 100)
+    @Column(name = "password", nullable = false, length = 30)
     private String password;
 
     @Column(name = "first_name", nullable = false, length = 45)
@@ -35,21 +39,25 @@ public class User extends AbstractBaseEntity {
     @Column(name = "created_date", nullable = false)
     private Date createdDate;
 
-    public User() {
-    }
-
     /**
-     * Create new user during registration
+     * Create new user
      */
     public static User create(String username, String emailAddress, String password) {
         User user = new User();
         user.username = username;
         user.emailAddress = emailAddress;
         user.password = password;
-        user.firstName = "";
-        user.lastName = "";
         user.createdDate = new Date();
         return user;
+    }
+
+    public void updateName(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public UserId getUserId() {
+        return new UserId(id);
     }
 
     public Long getId() {
@@ -74,6 +82,10 @@ public class User extends AbstractBaseEntity {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public String getInitials() {
+        return (firstName.substring(0, 1) + lastName.substring(0, 1)).toUpperCase();
     }
 
     public Date getCreatedDate() {

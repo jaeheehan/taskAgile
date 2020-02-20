@@ -17,11 +17,13 @@ public class AsyncMailer implements Mailer {
 
     private static final Logger log = LoggerFactory.getLogger(AsyncMailer.class);
 
+    /*
     private JavaMailSender mailSender;
 
     public AsyncMailer(JavaMailSender mailSender) {
        this.mailSender = mailSender;
     }
+    */
 
     @Async
     @Override
@@ -46,7 +48,7 @@ public class AsyncMailer implements Mailer {
 
             log.info(mailMessage.toString());
 
-            mailSender.send(mailMessage);
+            //mailSender.send(mailMessage);
         } catch (MailException e) {
             log.error("Failed to send mail message", e);
         }
